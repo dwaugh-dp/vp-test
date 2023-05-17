@@ -1,0 +1,336 @@
+ <template>
+    <div class="flex flex-col md:flex-row">
+        <!-- Left Column -->
+        <div class="md:w-1/2 p-8">
+            <h2 class="text-3xl font-bold mb-8">Features</h2>
+
+            <!-- Stripe Integration Toggle -->
+            <div class="flex items-center my-8">
+                <input type="checkbox" id="toggle" checked class="mr-4">
+                <label for="toggle">Stripe Integration</label>
+            </div>
+
+            <!-- Feature List -->
+            <ul>
+                <li class="mb-4">
+                    <span class="text-gray-700 mr-2">•</span> Feature 1
+                </li>
+                <li class="mb-4">
+                    <span class="text-gray-700 mr-2">•</span> Feature 2
+                </li>
+                <li class="mb-4">
+                    <span class="text-gray-700 mr-2">•</span> Feature 3
+                </li>
+            </ul>
+
+        </div>
+        <!-- Right Column -->
+        <div class="md:w-1/2 bg-gray-100 p-8 flex flex-col items-center justify-center">
+
+            <!-- Pricing Box -->
+            <div class=" bg-blue-500 bg-opacity-50 shadow-md rounded-lg py-8 px-4  ">
+                <h2 class="text-white text-4xl font-bold mb-4" id="price-p">$0 / 15% revenue split</h2>
+                <p class="text-white text-lg mb-4"></p>
+                
+            </div>
+
+        </div>
+    </div>
+</template>
+
+
+  
+<script>
+export default {
+    mounted() {
+        const toggle = document.getElementById('toggle')
+        toggle.addEventListener('change', () => {
+            const price = document.getElementById('price-p')
+            if (price) {
+                if (toggle.checked) {
+                    price.innerHTML = `
+       $0 / 15% revenue split
+          `
+                } else {
+                    price.innerHTML = `
+        $5 / service / month
+          `
+                }
+            }
+        })
+    }
+}
+</script>
+
+
+
+<template>
+    <div class="flex items-center justify-center">
+        <div
+            class="bg-gradient-to-r from-[#468ef9] to-[#7ea8e8] border border-[#7ea8e8] text-white rounded-lg shadow-xl p-6 mx-2 w-full max-w-2xl">
+            <div class="Plan Plan--standard p-6">
+
+                <div class="text-lg text-gray-100 mb-4 mt-2  Plan-description Plan-description-intergrated">
+                    Monthly subscription. Allow customers to book services and have a genereated invoice sent to them.
+                </div>
+                <div class="flex items-center my-8">
+                    <input type="checkbox" id="toggle" class="mr-4">
+                    <label for="toggle">Stripe Integration</label>
+                </div>
+                <ul class="mt-6 mb-6 Plan-list Plan-list-updated">
+                    <li class="flex items-center mb-2 text-gray-100">&#x2022;
+                        Accept Bookings online
+                    </li>
+                    <li class="flex items-center mb-2 text-gray-100">&#x2022;
+                        Unlimited Appointments
+                    </li>
+                    <li class="flex items-center mb-2 text-gray-100">&#x2022;
+                        Customizable Booking Page
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6 mx-2 w-full max-w-2xl">
+            <div class="Plan Plan--enterprise p-6">
+                <h2 class="uppercase text-xl font-bold text-gray-700 mb-2" id="plan-name">Invoicing Plan</h2>
+                <div class="mt-8 Plan-cardPricing">
+                    <div class="flex items-baseline text-4xl font-medium">
+                        <div class="text-7xl  text-blue-500 mr-2" id="price">$5</div>
+                        <div class="text-2xl text-gray-600" id="price-des">/service</div>
+                        <div class="text-2xl text-gray-600 ml-2" id="interval">/month</div>
+                    </div>
+                    <div class="text-gray-600 Plan-cardRate-description mt-1" id="info">no revenue split</div>
+                </div>
+                <div class="text-lg text-gray-600 mb-4 Plan-description-updated" id="payment">
+                    This plan doesnt include accepting payments online.
+                </div>
+                <div class="text-gray-600 Plan-description-subdescription mb-4" id="integration">
+                    Available for businesses with that are unable to integrate with stripe.
+                </div>
+                <a href="https://dashboard.stripe.com/register"
+                    class="uppercase Plan-button link-arrow bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full mt-6 transition-all duration-200 ease-in-out"
+                    data-analytics-action="get-started" data-analytics-source="pricing-experiment-plan-boxes"
+                    data-convert-cta="dashboard_register">Sign Up</a>
+
+                <!-- <div class="Plan-tableContainer">
+                    <table class="Plan-table">
+                        <tbody>
+                            <tr class="Plan-table-row">
+                                <td class="Plan-table-cell Plan-table-cell--alternating">
+                                    Volume discounts
+                                </td>
+                                <td class="Plan-table-cell">Country-specific rates</td>
+                            </tr>
+                            <tr>
+                                <td class="Plan-table-cell">Multi-product discounts</td>
+                                <td class="Plan-table-cell Plan-table-cell--alternating">
+                                    Interchange pricing
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <a href="/contact/sales" class="Plan-button Plan-Button--enterprise uppercase-link-with-arrow">
+                    Contact sales
+                </a> -->
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+
+export default {
+    mounted() {
+        const toggle = document.getElementById('toggle')
+        toggle.addEventListener('change', () => {
+            const price = document.getElementById('price')
+            const priceDes = document.getElementById('price-des')
+            const interval = document.getElementById('interval')
+            const info = document.getElementById('info')
+            const payment = document.getElementById('payment')
+            const integration = document.getElementById('integration')
+
+
+            if (price) {
+                if (toggle.checked) {
+                    price.innerHTML = `15%`; 
+                    priceDes.innerHTML = `revenue split`;
+                    interval.innerHTML = ``;
+                    info.innerHTML = `NO monthly fees. Pay as you go`;
+                    payment.innerHTML = `Accept payments online from any major credit or debit card.`;
+                    integration.innerHTML = `Integrate through Stripe Connect.`;
+
+                } else {
+                    price.innerHTML = `$5`;
+                    priceDes.innerHTML = `/service`;
+                    interval.innerHTML = `/month`;
+                    info.innerHTML = `no revenue split`;
+                    payment.innerHTML = `This plan doesnt include accepting payments online.`;
+                    integration.innerHTML = `Available for businesses with that are unable to integrate with stripe.`;
+
+                }
+            }
+        })
+    }
+};
+
+</script>
+
+
+
+<template>
+    <div class="w-full flex items-center">
+      <input
+        type="range"
+        min="1"
+        max="3"
+        class="slider"
+        v-model="value"
+        @input="updateValue"
+      />
+      <p id="room-count">{{ currentValue }}</p>
+    </div>
+  </template>
+  <script>
+
+  export default {
+    data() {
+      return {
+        currentValue: 5,
+        value: 1,
+       
+      }
+    },
+    methods: {
+
+      updateValue() {
+        const count = document.getElementById('room-count');
+        if (this.value === 1) {
+          count.innerHTML = 'Up to 5 rooms';
+        } else if (this.value === 2) {
+            count.innerHTML = 'Up to 10 rooms';
+            } else if (this.value === 3) {
+            count.innerHTML = 'Up to 20 rooms';
+        } else if (this.value === 3) {
+          this.currentValue = 20;
+        }
+        this.$emit('input', this.currentValue);
+        console.log(this.currentValue);
+      },
+    },
+  }
+  </script>
+  
+  <style>
+  /* Add any custom styles for the RangeSlider component here */
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 9999px;
+    margin: 0;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #4a5568;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #4a5568;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  </style>
+  
+
+
+
+  // ppage module a prelim
+  <template>
+    <div class="flex h-screen p-5  bg-gray-100">
+        <div class="w-3/5 bg-gray-100 pl-20">
+            <div class="h-full flex justify-center items-center">
+                <div class="bg-gray-400 bg-opacity-20 w-full h-4/5 rounded-md ">
+                    <!-- Content for the left inner container goes here -->
+                    <div class="px-12 py-16">
+                        <div>
+                            <input type="range" min="5" max="20" step="5" list="sliderValues" v-model="sliderValue"
+                                class="bg-blue-400">
+                            <datalist id="sliderValues">
+                                <option value="0"></option>
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </datalist>
+                            <p>Up to {{ sliderValue }} rooms </p>
+                        </div>
+                    </div>
+
+                    <!-- <PricingNewslider  /> -->
+                    <ul class="mt-6 mb-6 Plan-list Plan-list-updated">
+                        <li class="flex items-center mb-2 ">&#x2022;
+                            Accept Bookings online
+                        </li>
+                        <li class="flex items-center mb-2 ">&#x2022;
+                            Unlimited Appointments
+                        </li>
+                        <li class="flex items-center mb-2">&#x2022;
+                            Customizable Booking Page
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-2/5 bg-gray-100 pr-40">
+            <div class="h-3/5 bg-gradient-to-b from-blue-500 to-blue-900 rounded-md flex-col items-center justify-center">
+                <!-- Content for the right inner container goes here -->
+                <div class="text-white font-semibold text-lg items-center justify-center py-4 px-16" id="ptype">VENUEPRO SPACES</div>
+                <div class="text-white font-bold text-7xl px-24" id="p">${{ sliderValue }}</div>
+                <div class="text-white font-semibold text-lg items-center justify-center px-28" id="interval">/month</div>
+
+                <p class="text-white text-sm m-4" id="pinfo">Manage your space with  trusted groups</p>
+
+                <a href="https://dashboard.stripe.com/register"
+                    class="uppercase my-2 mx-24 link-arrow bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full mt-6 transition-all duration-200 ease-in-out"
+                    data-analytics-action="get-started" data-analytics-source="pricing-experiment-plan-boxes"
+                    data-convert-cta="dashboard_register">Sign Up</a>
+            </div>
+        </div>
+
+    </div>
+</template>
+  
+<script>
+export default {
+    data() {
+        return {
+            sliderValue: 5,
+        }
+    },
+};
+</script>
+  
+<style>/* Add any custom styles for the SplitScreen component here */</style>
+  

@@ -1,0 +1,1162 @@
+<template>
+    <nav class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-auto" src="~/assets/images/vp.png" alt="Logo">
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-4">
+              <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+              <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
+                Login
+              </button>
+              <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-md">
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </template>
+  
+
+  <template>
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-auto" src="~/assets/images/vp.png" alt="Logo">
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4 justify-end">
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-4 flex items-center md:ml-6">
+              <button class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded">
+                Log in
+              </button>
+              <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                Sign up
+              </button>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <!-- Mobile menu button -->
+            <button @click="isMobileMenuOpen = !isMobileMenuOpen" type="button" class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed. -->
+              <!--
+                Heroicon name: outline/menu
+  
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg :class="{ 'hidden': isMobileMenuOpen, 'block': !isMobileMenuOpen }" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <!-- Icon when menu is open. -->
+              <!--
+                Heroicon name: outline/x
+  
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Mobile menu, toggle classes based on menu state.-->
+<div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden">
+  <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">FAQ</a>
+  </div>
+  <div class="pt-4 pb-3 border-t border-gray-700">
+    <div class="flex items-center px-5">
+      <div class="flex-shrink-0">
+        <img class="h-8 w-auto" src="~/assets/images/vp.png" alt="Logo">
+      </div>
+      <div class="ml-3">
+        <div class="text-base font-medium text-white">Virtual Pass</div>
+      </div>
+      <button @click="isMobileMenuOpen = !isMobileMenuOpen" type="button" class="ml-auto bg-gray-800 p-1 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+        <span class="sr-only">Close main menu</span>
+        <!-- Heroicon name: outline/x -->
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="mt-3 px-2 space-y-1 sm:px-3">
+      <button class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Log in
+      </button>
+      <button class="mt-3 w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-indigo-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Sign up
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</nav>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      isMobileMenuOpen: false,
+    };
+  },
+};
+</script>
+<style>
+/* Style your component here */
+</style>
+  
+<template>
+    <nav class="fixed w-full p-6 bg-transparent">
+      <div class="flex items-center justify-between">
+  
+        <!-- Header logo -->
+        <div>
+          <!-- <Tailwind /> -->
+        </div>
+  
+        <!-- Mobile toggle -->
+        <div class="md:hidden">
+          <button @click="drawer">
+            <svg 
+              class="h-8 w-8 fill-current text-black"
+              fill="none" stroke-linecap="round" 
+              stroke-linejoin="round" stroke-width="2" 
+              viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Navbar -->
+        <div class="hidden md:block">
+          <ul class="flex space-x-8 text-sm font-sans">
+            <li><a href="#" class="active border-b-2 border-blue-500 pb-1">Home</a></li>
+            <li><a href="#" class="">Services</a></li>
+            <li><a href="#" class="">Features</a></li>
+            <li><a href="#" class="">FAQ</a></li>
+            <li><a href="#" class="">Contact</a></li>
+            <li><a href="#" class="cta bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white font-semibold">Sign Up</a></li>
+          </ul>
+        </div>
+  
+        <!-- Dark Background Transition -->
+        <transition
+          enter-class="opacity-0"
+          enter-active-class="ease-out transition-medium"
+          enter-to-class="opacity-100"
+          leave-class="opacity-100"
+          leave-active-class="ease-out transition-medium"
+          leave-to-class="opacity-0"
+        >
+          <div @keydown.esc="isOpen = false" v-show="isOpen" class="z-10 fixed inset-0 transition-opacity">
+              <div @click="isOpen = false" class="absolute inset-0 bg-black opacity-50" tabindex="0"></div>
+          </div>
+        </transition>
+  
+        <!-- Drawer Menu -->
+        <aside class="p-5 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30" :class="isOpen ? 'translate-x-0' : '-translate-x-full'">
+          
+          <div class="close">
+            <button class="absolute top-0 right-0 mt-4 mr-4" @click=" isOpen = false">
+              <svg 
+                class="w-6 h-6"
+                fill="none" stroke-linecap="round" 
+                stroke-linejoin="round" stroke-width="2"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+  
+          <span @click="isOpen = false" class="flex w-full items-center p-4 border-b">
+            <!-- <Tailwind /> -->
+          </span>
+  
+          <ul class="divide-y font-sans">
+            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Home</a></li>
+            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Services</a></li>
+            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Features</a></li>
+            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">FAQ</a></li>
+            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Contact</a></li>
+            <li><a href="#" @click="isOpen = false" class="my-8 w-full text-center font-semibold cta inline-block bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white">Sign Up</a></li>
+          </ul>
+  
+          <div class="follow">
+            <p class="italic font-sans text-sm">follow us:</p>
+            <div class="social flex space-x-5 mt-4 ">
+              <a href="#">
+                <svg 
+                  aria-hidden="true" focusable="false" 
+                  data-prefix="fab" data-icon="twitter" 
+                  class="h-5 w-5 fill-current text-gray-600" role="img" 
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                </svg>
+              </a>
+              <a href="#">
+                <svg 
+                  aria-hidden="true" focusable="false" 
+                  data-prefix="fab" data-icon="facebook-f" 
+                  class="h-5 w-5 fill-current text-gray-600" role="img" 
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                  <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                </svg>
+              </a>
+              <a href="#">
+                <svg 
+                  aria-hidden="true" focusable="false" 
+                  data-prefix="fab" data-icon="instagram" 
+                  class="h-5 w-5 fill-current text-gray-600" role="img" 
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                </svg>
+              </a>
+              <a href="#">
+                <svg 
+                  aria-hidden="true" focusable="false" 
+                  data-prefix="fab" data-icon="youtube" 
+                  class="h-5 w-5 fill-current text-gray-600" role="img" 
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                  <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+        </aside>
+  
+      </div>
+    </nav>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        isOpen: false
+      };
+    },
+    methods: {
+  drawer: () => {
+    this.isOpen = !this.isOpen;
+  }
+},
+    watch: {
+      isOpen: {
+        immediate: true,
+        handler(isOpen) {
+          if (process.client) {
+            if (isOpen) document.body.style.setProperty("overflow", "hidden");
+            else document.body.style.removeProperty("overflow");
+          }
+        }
+      }
+    },
+    mounted() {
+      document.addEventListener("keydown", e => {
+        if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
+      });
+    }
+  };
+  </script>
+
+//room display design
+
+  <template>
+    <div class="wall container-fluid">
+        <b-modal id="modalPopover" title="Room Selector" @ok="getMeetingData" ok-only>
+            <div id="v-model-select" class="col-md-12">
+                <select class="col-md-12" v-model="selected">
+                    <option disabled value="">Please select one</option>
+                    <option v-for="room in user_rooms" :key="room.name" :value="room.id">
+                        {{ room.name }}
+                    </option>
+                </select>
+            </div>
+        </b-modal>
+
+        <transition-group name="bounce">
+            <div v-if="modes.grey" key="grey" class="row h-100">
+                <div id="app-status" class="col-md-7 unconfigured">
+                    <div id="top" class="row">
+                        <div class="col-md-12">
+                            <div id="top" class="meeting-info">
+                                <h2 class="white">
+                                    No Meetings
+                                </h2>
+                                <hr />
+                                <h4 class="mb-5 white">Available</h4>
+                                <h3 class="mt-5 white">
+                                    {{
+                                        new Date()
+                                        | moment(
+                                            "dddd, MMMM Do YYYY hh:mm A"
+                                        )
+                                    }}
+                                </h3>
+                            </div>
+                            <!-- ------------------------------------ -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="col-md-5 blk2">
+                    <div id="top" class="meeting-info">
+                        <!-- <h4 class="white">Next</h4> -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <b-card-group deck>
+                                        <b-card class="strong"
+                                            header="There are no meetings in the calendar with todays date.">
+                                        </b-card>
+                                    </b-card-group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="modes.blue" key="blue" class="row h-100">
+                <div id="app-status" class="col-md-7 open">
+                    <div id="top" class="row">
+                        <div class="col-md-12">
+                            <div id="top" class="meeting-info">
+                                <h2 class="white">
+                                    {{
+                                        reservations.tommorow[0]["room"]["name"]
+                                    }}
+                                </h2>
+                                <hr />
+                                <h4 class="mb-5 white">Available</h4>
+                                <h3 class="mt-5 white">
+                                    {{
+                                        new Date()
+                                        | moment(
+                                            "dddd, MMMM Do YYYY hh:mm A"
+                                        )
+                                    }}
+                                </h3>
+                            </div>
+                            <!-- ------------------------------------ -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="col-md-5 blk2">
+                    <div id="top" class="meeting-info">
+                        <!-- <h4 class="white">Next</h4> -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <b-card-group deck>
+                                        <b-card class="strong" header="Upcoming Meetings">
+                                            <b-list-group v-for="b in reservations.tommorow" :key="b.booking_date">
+                                                <b-list-group-item class="
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          ">
+                                                    {{ b.booking_title }}
+                                                    <b-badge variant="primary" pill>{{
+                                                        b.booking_date
+                                                        | moment(
+                                                            "dddd, MMMM Do YYYY"
+                                                        )
+                                                    }}
+                                                        {{
+                                                            tellTime(
+                                                                b.booking_start_time
+                                                            )
+                                                        }}
+                                                        -
+                                                        {{
+                                                            tellTime(
+                                                                b.booking_end_time
+                                                            )
+                                                        }}
+                                                    </b-badge>
+                                                </b-list-group-item>
+                                            </b-list-group>
+                                        </b-card>
+                                    </b-card-group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- red -->
+            <div v-if="modes.red" key="red" class="row h-100">
+                <div id="app-status" class="col-md-7 unavailable">
+                    <div id="top" class="row">
+                        <div class="col-md-12">
+                            <div id="top" class="meeting-info">
+                                <h2 class="white">
+                                    {{ reservations.today[0]["room"]["name"] }}
+                                </h2>
+                                <hr />
+                                <h4 class="mb-5 white">
+                                    <strong>BOOKED</strong>
+                                </h4>
+                                <div class="col-md-12">
+                                    <div id="countdown">
+                                        <ul>
+                                            <li><span id="days"></span>days</li>
+                                            <li>
+                                                <span id="hours"></span>Hours
+                                            </li>
+                                            <li>
+                                                <span id="minutes"></span>Minutes
+                                            </li>
+                                            <li>
+                                                <span id="seconds"></span>Seconds
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h3 class="mt-5 white">
+                                    {{
+                                        new Date()
+                                        | moment(
+                                            "dddd, MMMM Do YYYY hh:mm A"
+                                        )
+                                    }}
+                                </h3>
+                            </div>
+                            <!-- ------------------------------------ -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="col-md-5 blk">
+                    <div id="top" class="meeting-info">
+                        <h4 class="white">Details</h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="open">
+                                        <h4 class="mt-3 mb-2 white">
+                                            {{
+                                                reservations.today[0][
+                                                "booking_date"
+                                                ] | moment("dddd, MMMM Do YYYY")
+                                            }}
+                                        </h4>
+                                        <h4 class="white">
+                                            {{
+                                                tellTime(
+                                                    reservations.today[0][
+                                                    "booking_start_time"
+                                                    ]
+                                                )
+                                            }}
+                                            -
+                                            {{
+                                                tellTime(
+                                                    reservations.today[0][
+                                                    "booking_end_time"
+                                                    ]
+                                                )
+                                            }}
+                                        </h4>
+                                        <h3 class="white">
+                                            {{
+                                                reservations.today[0]
+                                                    .booking_title
+                                            }}
+                                        </h3>
+                                        <h4 class="mt-3 white">
+                                            <i class="fab fa-black-tie"></i>
+                                            &nbsp;Event Organizer
+                                        </h4>
+                                        <h5 class="white">
+                                            {{
+                                                reservations.today[0]["user"][
+                                                "name"
+                                                ]
+                                            }}
+                                            {{
+                                                reservations.today[0]["user"][
+                                                    "last_name"
+                                                ]
+                                            }}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- green -->
+            <div v-if="modes.green" key="green" class="row h-100">
+                <div id="app-status" class="col-md-7 available">
+                    <div id="top" class="row">
+                        <div class="col-md-12">
+                            <div id="top" class="meeting-info">
+                                <h2 class="white">
+                                    {{ current_reservation["room"]["name"] }}
+                                </h2>
+                                <hr />
+                                <h4 class="mb-5 white">Available</h4>
+                                <div class="col-md-12">
+                                    <div id="countdown">
+                                        <ul>
+                                            <li><span id="days"></span>days</li>
+                                            <li>
+                                                <span id="hours"></span>Hours
+                                            </li>
+                                            <li>
+                                                <span id="minutes"></span>Minutes
+                                            </li>
+                                            <li>
+                                                <span id="seconds"></span>Seconds
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h3 class="mt-5 white">
+                                    {{
+                                        new Date()
+                                        | moment(
+                                            "dddd, MMMM Do YYYY hh:mm A"
+                                        )
+                                    }}
+                                </h3>
+                            </div>
+                            <!-- ------------------------------------ -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="col-md-5 blk">
+                    <div id="top" class="meeting-info">
+                        <h4 class="white">Next</h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="open">
+                                        <h4 class="mt-3 mb-2 white">
+                                            {{
+                                                current_reservation.booking_date
+                                                | moment(
+                                                    "dddd, MMMM Do YYYY"
+                                                )
+                                            }}
+                                        </h4>
+                                        <h4 class="white">
+                                            {{
+                                                tellTime(
+                                                    current_reservation.booking_start_time
+                                                )
+                                            }}
+                                            -
+                                            {{
+                                                tellTime(
+                                                    current_reservation.booking_end_time
+                                                )
+                                            }}
+                                        </h4>
+                                        <h3 class="white">
+                                            {{
+                                                current_reservation.booking_title
+                                            }}
+                                        </h3>
+                                        <div class="col-md-12">
+                                            <div class="digicustom-countdown">
+                                                <div class="display-table-cell">
+                                                    <div id="rounded-countdown">
+                                                        <div class="countdown" data-remaining-sec="2000000"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="mt-3 white">
+                                            <i class="fab fa-black-tie"></i>
+                                            &nbsp;Event Organizer
+                                        </h4>
+                                        <h5 class="white">
+                                            {{
+                                                current_reservation["user"][
+                                                "name"
+                                                ]
+                                            }}
+                                            {{
+                                                current_reservation["user"][
+                                                "last_name"
+                                                ]
+                                            }}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition-group>
+    </div>
+</template>
+<style scoped>
+#countdown {
+    color: #fff;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+.emoji {
+    /* display: none; */
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    li {
+        font-size: 1.125rem;
+        padding: 0.75rem;
+    }
+
+    li span {
+        font-size: 3.375rem;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.1s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+}
+
+.bounce-enter-active {
+    animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+    animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.white {
+    color: #fff;
+    font-weight: bolder;
+}
+
+hr {
+    background-color: #fff;
+}
+
+#top {
+    position: relative;
+    top: 45%;
+    transform: translate(0, -50%);
+    padding: 10px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box div {
+    /* width: 100px; */
+    height: 100%;
+}
+
+.wall {
+    background-image: url("/images/getty_517610514_353435.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#rounded-countdown {
+    width: 100% !important;
+}
+
+.centerJ {
+    position: absolute;
+    top: 45%;
+    transform: translate(0, -50%);
+    padding: 10px;
+}
+
+.unavailable {
+    background-color: rgb(160 9 9 / 86%);
+}
+
+.unconfigured {
+    background-color: rgb(125 125 125 / 86%);
+}
+
+.available {
+    background-color: rgb(9 160 18 / 70%);
+}
+
+.open {
+    background-color: rgb(0 67 255 / 70%);
+}
+
+.blk {
+    background-color: rgb(4 5 6 / 70%);
+    color: #fff !important;
+}
+
+.blk2 {
+    background-color: rgb(4 5 6 / 70%);
+    color: #000 !important;
+}
+</style>
+
+<script>
+import Swal from "sweetalert2";
+import moment from "moment";
+const rooms = [
+  {
+    id: 1,
+    name: "Single Room",
+    description: "A cozy room with a single bed.",
+    price: 50.00,
+    capacity: 1,
+    amenities: ["WiFi", "TV", "Air conditioning"],
+    image: "https://example.com/single-room.jpg"
+  },
+  {
+    id: 2,
+    name: "Double Room",
+    description: "A spacious room with a double bed.",
+    price: 80.00,
+    capacity: 2,
+    amenities: ["WiFi", "TV", "Air conditioning", "Mini bar"],
+    image: "https://example.com/double-room.jpg"
+  },
+  {
+    id: 3,
+    name: "Twin Room",
+    description: "A room with two single beds.",
+    price: 70.00,
+    capacity: 2,
+    amenities: ["WiFi", "TV", "Air conditioning", "Mini bar"],
+    image: "https://example.com/twin-room.jpg"
+  },
+  {
+    id: 4,
+    name: "Triple Room",
+    description: "A room with three single beds.",
+    price: 90.00,
+    capacity: 3,
+    amenities: ["WiFi", "TV", "Air conditioning", "Mini bar"],
+    image: "https://example.com/triple-room.jpg"
+  },
+  {
+    id: 5,
+    name: "Suite",
+    description: "A luxurious room with a king-size bed and a private balcony.",
+    price: 150.00,
+    capacity: 2,
+    amenities: ["WiFi", "TV", "Air conditioning", "Mini bar", "Private balcony"],
+    image: "https://example.com/suite.jpg"
+  }
+]; 
+export default {
+    props: rooms,
+    components: {},
+    data() {
+        return {
+            current_reservation: "",
+            countdown: true,
+            countdown_complete: false,
+            todays_date: new Date(),
+            selected: "",
+            modes: {
+                red: false,
+                green: false,
+                blue: false,
+                grey: false
+            },
+            reservations: {
+                today: [],
+
+                tommorow: []
+            },
+            status: 0,
+            book_data: [],
+            user_rooms: JSON.parse(rooms),
+            date: {},
+            create: false,
+            modalTitle: "Local Broker Update",
+            nameState: null,
+            timestamp: ""
+            // bookings: [],
+        };
+    },
+    computed: {},
+    watch: {
+        reservations: function (val) {
+            console.log("Reservations Updated");
+        },
+        status: function (val) {
+            console.log("Status is now" + val);
+        }
+    },
+    created() {
+        setInterval(this.getNow, 1000);
+    },
+    methods: {
+        configure() {
+            var today = new Date();
+
+            var time =
+                today.getHours() +
+                ":" +
+                today.getMinutes() +
+                ":" +
+                today.getSeconds();
+            console.log(this.reservations);
+            if (this.reservations.today[0]) {
+                this.current_reservation = this.reservations.today[0];
+                // //Start Timer
+
+                this.startTimer(this.current_reservation.booking_end_time);
+
+                this.modes.blue = false;
+                this.modes.green = false;
+                this.modes.red = true;
+                this.modes.grey = false;
+
+                // add a 30 minute check for meetings coming up in the next 3 hours
+                // if there is a meeting in the next 30 mins set to green mode
+                //There are no immediate meetings so set to available
+                if (this.current_reservation.booking_start_time > time) {
+                    this.startTimer(
+                        this.current_reservation.booking_start_time
+                    );
+                    this.modes.green = true;
+                    this.modes.grey = false;
+                    this.modes.blue = false;
+                    this.modes.red = false;
+                }
+
+                // Check if this meeting will be taking place within the next 30 getMinutes
+                // if it is taking place in the next 30 minutes change the color to green
+                // set a countdown to when the meeting will begin
+            } else if (this.reservations.tommorow[0]) {
+                this.modes.red = false;
+                this.modes.green = false;
+                this.modes.blue = true;
+                this.modes.grey = false;
+            } else if (this.reservations.tommorow) {
+                this.modes.red = false;
+                this.modes.green = false;
+                this.modes.blue = false;
+                this.modes.grey = true;
+                // new Swal();
+                // Swal.fire(
+                //     "No Meetings",
+                //     "There are no meetings scheduled for the selected room today"
+                // );
+                // this.$root.$emit(
+                //     "bv::toggle::modal",
+                //     "modalPopover",
+                //     "#btnToggle"
+                // );
+            }
+        },
+        startTimer(timer_end_time) {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, "0");
+            var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+            var yyyy = today.getFullYear();
+            var time =
+                today.getHours() +
+                ":" +
+                today.getMinutes() +
+                ":" +
+                today.getSeconds();
+
+            var todays_date = yyyy + "-" + mm + "-" + dd;
+            // "Sep 16, 2021 13:30:00",
+            this.todays_date = todays_date;
+            var todays_meetings = [];
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+            const second = 1000,
+                minute = second * 60,
+                hour = minute * 60,
+                day = hour * 24;
+
+            let end_time =
+                month[today.getMonth()] +
+                " " +
+                today.getDate() +
+                ", " +
+                today.getFullYear() +
+                " " +
+                timer_end_time;
+            const self = this;
+            let countDown = new Date(end_time).getTime(),
+                x = setInterval(function () {
+                    let now = new Date().getTime(),
+                        distance = countDown - now;
+
+                    (document.getElementById("days").innerText = Math.floor(
+                        distance / day
+                    )),
+                        (document.getElementById(
+                            "hours"
+                        ).innerText = Math.floor((distance % day) / hour)),
+                        (document.getElementById(
+                            "minutes"
+                        ).innerText = Math.floor((distance % hour) / minute)),
+                        (document.getElementById(
+                            "seconds"
+                        ).innerText = Math.floor((distance % minute) / second));
+
+                    if (distance <= 0) {
+                        clearInterval(x);
+                        self.modes.red = false;
+                        console.log("Time Ended");
+                        self.getMeetingData();
+                    }
+                }, second);
+        },
+        getMeetingData(status) {
+            // Reset Reservations Variable with fresh data from axios requests
+            this.reservations.today = [];
+            this.reservations.tommorow = [];
+            // Get Room Data
+            axios.get("/room_data/" + this.selected).then(response => {
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, "0");
+                var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+                var yyyy = today.getFullYear();
+                var time =
+                    today.getHours() +
+                    ":" +
+                    today.getMinutes() +
+                    ":" +
+                    today.getSeconds();
+
+                var todays_date = yyyy + "-" + mm + "-" + dd;
+                // "Sep 16, 2021 13:30:00",
+                this.todays_date = todays_date;
+                for (var i = 0; i < response.data.length; i++) {
+                    //Check Booking Dates For Today & Tommorow
+                    //Today
+                    if (response.data[i].booking_date === todays_date) {
+                        var now = moment();
+                        var end_time = moment(
+                            response.data[i].booking_end_time,
+                            "HH:mm"
+                        );
+
+                        if (!now.isSameOrAfter(end_time)) {
+                            console.log("Meetings Exists For Today");
+                            this.reservations.today.push(response.data[i]);
+                        }
+                    } else if (response.data[i].booking_date > todays_date) {
+                        console.log("Meetings Exists For Tommorow");
+                        // Push to list of tommorows meetings
+                        this.reservations.tommorow.push(response.data[i]);
+                    }
+                }
+                this.configure();
+            });
+
+            // this.$root.$emit("bv::toggle::modal", "modalPopover", "#btnToggle"); //close modal
+        },
+        roomSelection() {
+            this.modes.green = false;
+
+            //       this.$swal.fire({
+            //   icon: "success",
+            //   title: "Order Complete",
+            //   text:
+            //     "Your Counterweight Order was successfully placed. You will receive an email from our Counterweight department momentarily!",
+            //   footer: "VDF Vertical Order",
+            // });
+            console.log("Room Selection Init");
+            console.log(this.book_data);
+            new Swal();
+            Swal.fire({
+                title: "Please Select A Room",
+                icon: "info",
+                input: "select",
+                showCancelButton: true
+                // inputValidator: (value) => {
+                //   return new Promise((resolve) => {
+                //     if (value === "oranges") {
+                //       resolve();
+                //     } else {
+                //       resolve("You need to select oranges :)");
+                //     }
+                //   });
+                // },
+            });
+
+            // if (fruit) {
+            //   Swal.fire(`You selected: ${fruit}`);
+            // }
+        },
+        tellTime(t) {
+            const time = t.slice(0, -3);
+            var firstChar = t.charAt(0);
+            if ((firstChar = "0")) {
+                return time + " AM";
+            } else {
+                return time + " PM";
+            }
+        },
+        getNow: function () {
+            const current = new Date();
+            // By default US English uses 12hr time with AM/PM
+            const time = current.toLocaleTimeString("en-US");
+            this.timestamp = time;
+        },
+        timeFormat(data) {
+            return data.toLocaleString([], { hour12: true });
+        },
+        retrieveData() { }
+    },
+    mounted() {
+        this.$root.$emit("bv::toggle::modal", "modalPopover", "#btnToggle");
+    }
+};
+</script>
+
+
+
+
+
+
+
+<template>
+    <div id="meeting-card" :class="cardColor + ' text-white px-4 py-4'">
+      <span>
+        <h1 class="text-lg font-medium">{{ group }}</h1>
+        <h1 class="text-xl font-bold">{{ meeting_name }}</h1>
+        <h1 class="text-lg font-medium">{{ meeting_duration }} &nbsp; {{ meeting_date }}</h1>
+      </span>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    props: {
+      group: {
+        type: String,
+        required: true
+      },
+      meeting_name: {
+        type: String,
+        required: true
+      },
+      meeting_duration: {
+        type: String,
+        required: true
+      },
+      meeting_date: {
+        type: String,
+        required: true
+      }
+    },
+    computed: {
+      meeting_status() {
+        let meeting_time = new Date(this.meeting_date);
+        let current_time = new Date();
+        let time_difference = meeting_time - current_time;
+        let time_difference_in_minutes = time_difference / 60000;
+  
+        if (time_difference_in_minutes < 0) {
+          return "Ongoing";
+        } else if (time_difference_in_minutes < 60) {
+          return "Within the hour";
+        } else {
+          return "Upcoming";
+        }
+      },
+      cardColor() {
+        if (this.meeting_status == "Ongoing") {
+          return "bg-red-600";
+        } else if (this.meeting_status == "Within the hour") {
+          return "bg-yellow-400";
+        } else {
+          return "bg-blue-500";
+        }
+      }
+    }
+  };
+  </script>
